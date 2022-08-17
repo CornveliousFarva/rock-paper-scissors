@@ -3,7 +3,7 @@ const getUserChoice = userInput => {
     userInput =>{
         userInput = userInput.toLowerCase()
         // If / else statement for user input
-        if(userInput === 'rock' || userInput === 'paper' || userInput === 'scissors'){
+        if(userInput === 'bomb' || userInput === 'rock' || userInput === 'paper' || userInput === 'scissors'){
             return userInput
         } else {
             console.error
@@ -23,4 +23,33 @@ const getComputerChoice = () => {
     }
 }
 // Variable that determines the winner
+const determineWinner = (userChoice, computerChoice) => {
+    if(userChoice === 'bomb'){
+        return 'You win!'
+    }
+    if(userChoice === computerChoice){
+        return 'This game is tied'
+    }
+    if(userChoice === 'rock'){
+        if(computerChoice === 'paper'){
+            return 'Computer won'
+        } else{
+            return 'You win!'
+        }
+    }
+    if(userChoice === 'paper'){
+        if(computerChoice === 'scissors'){
+            return 'Computer won.'
+        } else{
+            return 'You win!'
+        }
+    }
+    if(userChoice === 'scissors'){
+        if (computerChoice === 'rock'){
+            return 'Computer won'
+        } else {
+            return 'You win!'
+        }
+    }
+}
 // Variable that plays the game

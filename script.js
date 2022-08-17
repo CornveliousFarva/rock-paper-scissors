@@ -53,3 +53,12 @@ const determineWinner = (userChoice, computerChoice) => {
     }
 }
 // Variable that plays the game
+const playGame = () => {
+    const getUserChoice = getUserChoice();
+    const getComputerChoice = getComputerChoice();
+    console.log("You threw: " + userChoice);
+    console.log("The computer threw: " + computerChoice);
+    console.log(determineWinner(userChoice, computerChoice))
+}
+
+playGame()
